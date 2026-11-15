@@ -1,0 +1,4 @@
+.DS_Store
+# big source photos used only to make the cutouts (not needed to run the site)
+tools/raw-photos/
+tools/png-originals/

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Café</title>
+  <meta name="description" content="">
+  <meta name="theme-color" content="#f3f0ea">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+SC:wght@500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <noscript><style>#loader{display:none!important}.reveal{opacity:1;transform:none}</style></noscript>
+</head>
+<body class="loading">
+
+  <!-- LOADING SCREEN -->
+  <div id="loader" role="status" aria-live="polite">
+    <div class="ld-table"></div>
+    <div class="ld-center">
+      <div class="ld-cup">
+        <i class="ld-orbit"></i>
+        <img src="assets/img/latte-heart.webp" alt="" width="220" height="250">
+      </div>
+      <p class="ld-name" data-bind="name"></p>
+      <p class="ld-est"><span class="rule"></span><span data-bind="est"></span><span class="rule"></span></p>
+      <div class="ld-bar"><b id="ldBar"></b></div>
+      <p class="ld-msg"><span data-ui="loading"></span> <em id="ldPct">0%</em></p>
+    </div>
+  </div>
+
+  <div class="table" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <a class="brand" href="#top" data-bind="short">Café</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#menu" data-ui="navMenu">Menu</a>
+      <a href="#space" data-ui="navSpace">The Space</a>
+      <a href="#visit" data-ui="navVisit">Visit</a>
+      <a class="btn btn-small" href="#reserve" data-ui="reserve">Reserve</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-stage" id="heroStage"></div>
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="orn">✦</span> <span data-bind="tagline"></span> <span class="orn">✦</span></p>
+        <h1 class="hero-name" data-bind="name"></h1>
+        <p class="est"><span class="rule"></span><span data-bind="est"></span><span class="rule"></span></p>
+        <p class="hero-line" data-bind="heroLine"></p>
+        <p class="hero-sub" data-bind="heroSub"></p>
+        <p class="open-now" data-open></p>
+        <div class="hero-cta">
+          <a class="btn btn-solid" href="#reserve" data-ui="reserveHero"></a>
+          <a class="btn" href="#scenes" data-ui="seeMenu"></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCENES (rendered from site.config.js) -->
+    <div id="scenes"></div>
+
+    <!-- FULL MENU -->
+    <section class="carte" id="menu">
+      <div class="paper reveal">
+        <p class="kicker" data-ui="menuKicker"></p>
+        <h2 class="title" data-ui="menuTitle"></h2>
+        <div class="orn-line"><span>✦</span></div>
+        <div class="carte-grid" id="carteGrid"></div>
+        <p class="legend" data-ui="menuLegend"></p>
+      </div>
+    </section>
+
+    <!-- The rest is rendered from config -->
+    <section class="space" id="space"></section>
+    <section class="reviews" id="reviews"></section>
+    <section class="reserve" id="reserve"></section>
+    <section class="visite" id="visit"></section>
+    <section class="faq" id="faq"></section>
+    <section class="more" id="more"></section>
+  </main>
+
+  <footer class="foot">
+    <p class="foot-script" data-bind="name"></p>
+    <p class="foot-links" id="footLinks"></p>
+    <p class="foot-small">© <span id="year"></span> · <span data-bind="est"></span> · <span data-ui="made"></span></p>
+  </footer>
+
+  <!-- Mobile quick-action bar -->
+  <nav class="mbar" id="mbar" aria-label="Quick actions">
+    <a class="mb-main" href="#reserve" data-ui="reserve"></a>
+    <a id="mbCall" data-ui="call"></a>
+    <a id="mbDir" data-ui="dirShort"></a>
+  </nav>
+
+  <!-- Netlify Forms needs a static copy of each form so it can detect it at deploy time -->
+  <form name="newsletter" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <input type="email" name="email"><input name="bot-field">
+  </form>
+
+  <script src="site.config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
