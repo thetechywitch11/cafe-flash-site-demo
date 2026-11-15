@@ -292,9 +292,10 @@ body.loading{overflow:hidden;height:100svh}
   .carte-grid,.visit-grid{grid-template-columns:1fr}
   .hero{padding-top:92px;padding-bottom:150px}
   .hero-sub,.hero-cta{display:none}  /* the bottom bar already has Reserve */
-  .hero-stage .item:nth-child(1){left:78%!important;top:82%!important;width:50%!important}
-  .hero-stage .item:nth-child(2){left:20%!important;top:87%!important;width:46%!important}
-  .hero-stage .item:nth-child(3){display:none}
+  /* no cup in the phone hero: the first menu scene is a cup, and the same mug twice in a row looked repetitive */
+  .hero-stage .item:nth-child(1){display:none}
+  .hero-stage .item:nth-child(2){left:26%!important;top:85%!important;width:58%!important}
+  .hero-stage .item:nth-child(3){left:83%!important;top:80%!important;width:27%!important}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}.cue i,.ld-cup img,.ld-orbit{animation:none}
